@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Schedules</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Meal Schedule</h2>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Recipe name</th>
+    </tr>
+    {% for meal in meals %}
+    <tr>
+        <td>{{ meal.Date.strftime('%d/%m/%Y') }}</td>
+        <td>{{ meal.Date.strftime('%A') }}</td>
+        <td>{% if meal.Time == 'B' %}
+            Breakfast
+            {% endif %}
+            {% if meal.Time == 'L' %}
+            Lunch
+            {% endif %}            
+            {% if meal.Time == 'D' %}
+            Dinner 
+            {% endif %}
+            {% if meal.Time == 'S' %}
+            Snacks
+            {% endif %}
+        </td>
+        <td>
+            {{ meal.recipeName }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
