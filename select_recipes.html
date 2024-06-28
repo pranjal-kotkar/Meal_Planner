@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Meal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 10vh;
+         
+            background-color: #f3e5f5; 
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 350px; 
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 18px; 
+            margin-bottom: 20px;
+        }
+        .meal-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .meal-options label {
+            margin-top: 5px;
+            font-size: 10px; 
+            color: #555555;
+        }
+        .meal-options select {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 10px; 
+        }
+        .meal-options button {
+            margin-top: 10px;
+            padding: 12px;
+            background-color: #af4c51;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 8px; 
+            transition: background-color 0.3s;
+            width: 100%; 
+            box-sizing: border-box; 
+        }
+        .meal-options button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Meal!</h1>
+        <div class="meal-options">
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="breakfast">Choose Breakfast:</label>
+            <select name="breakfast" id="breakfast">
+                {% for row in bfRecipes %}
+                    <option value="{{ row.RecipeID }}">{{ row.RecipeName }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="lunch">Choose Lunch:</label>
+            <select name="lunch" id="lunch">
+                {% for row in lunchRecipes %}
+                    <option value="{{ row.RecipeID }}">{{ row.RecipeName }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="dinner">Choose Dinner:</label>
+            <select name="dinner" id="dinner">
+                {% for row in dinnerRecipes %}
+                    <option value="{{ row.RecipeID }}">{{ row.RecipeName }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="snacks">Choose Snacks:</label>
+            <select name="snacks" id="snacks">
+                {% for row in snackRecipes %}
+                    <option value="{{ row.RecipeID }}">{{ row.RecipeName }}</option>
+                {% endfor %}
+            </select>
+            
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
+
