@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Add background color to the body */
+body {
+    background-color: peachpuff /* Choose your desired background color */
+}
+
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Calories Result</h1>
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text"><strong>Consumed Calories:</strong> {{ cals.consumedCal }}</p>
+                <p class="card-text"><strong>Expected Calories:</strong> {{ expectedCal['expectedCal'] }}</p> <!-- Accessing the value using the key -->
+                <p class="card-text"><strong>Calories Difference:</strong> {{ cals.diffCal }}</p>
+                <p class="card-text"><strong>Safe or Not:</strong> {{ safeOrNot }}</p>
+            </div>
+        </div>
+        <a href="/meal_planner" class="btn btn-danger mt-3">Back to Home</a>
+
+        <div class="text-center mt-3">
+            <i class="fas fa-walking fa-3x"></i> <!-- Icon representing a person walking -->
+        </div>
+    </div>
+</body>
+</html>

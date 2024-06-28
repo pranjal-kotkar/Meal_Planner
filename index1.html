@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Calories</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Custom styles */
+        body {
+            background-color: palegoldenrod; /* Light  background */
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    {% if message %}
+    <script>
+        // JavaScript code to display an alert
+        alert("{{ message }}");
+    </script>
+    {% endif %}
+    <div class="container">
+        <h1 class="text-center mb-4">Calculate Calories</h1>
+        <p class="card-text"><strong>FOR DATE : </strong> {{ date }}</p>
+        <br>
+        <div class="text-center mt-3">
+            <a href="/calculate_calories?date={{ date }}" class="btn btn-warning btn-lg">Calculate Calories <i class="fas fa-heartbeat ml-2"></i></a>
+        </div>
+        
+        
+        <!-- Include the image below the form -->
+        
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
