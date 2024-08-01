@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,22 +21,33 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 350px; /* Adjusted max-width */
+            max-width: 350px;
             width: 100%;
+        }
+        h2, h3 {
+            margin: 10px 0;
         }
         h2 {
             color: #333;
-            margin-bottom: 20px;
+            font-size: 24px; /* Ensure visibility */
+        }
+        h3 {
+            color: #555;
+            font-size: 18px; /* Ensure visibility */
         }
         form {
             text-align: left;
         }
         label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: #555;
         }
-        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        select,
         input[type="submit"] {
             width: 100%;
             padding: 10px;
@@ -84,13 +96,13 @@
             <input type="password" id="password" name="password" required>
 
             <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required><br>
+            <input type="number" id="age" name="age" required>
            
             <label for="height">Height (cm):</label>
-            <input type="number" id="height" name="height" required><br>
+            <input type="number" id="height" name="height" required>
            
             <label for="weight">Weight (kg):</label>
-            <input type="number" id="weight" name="weight" required><br>
+            <input type="number" id="weight" name="weight" required>
            
             <label for="sex">Sex:</label>
             <select id="sex" name="sex" required>
